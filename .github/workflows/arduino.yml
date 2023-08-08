@@ -21,9 +21,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
+        uses: actions/checkout@main
 
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
@@ -43,7 +41,7 @@ jobs:
         run: arduino-cli lib install "ArduinoJson"
 
       - name: Compile Example
-        run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/example 
+        run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/example  --warnings more
  
       - name: Compile JSON
         run: arduino-cli compile --fqbn esp32:esp32:esp32 ./examples/json  --warnings more

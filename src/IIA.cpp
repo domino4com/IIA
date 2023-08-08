@@ -40,7 +40,7 @@ bool IIA::getData(float &x, float &y, float &z) {
 }
 
 bool IIA::getJSON(JsonObject &doc) {
-    float x, y, z, t;
+    float x, y, z;
     if (!getData(x, y, z)) {
         return false;
     }
