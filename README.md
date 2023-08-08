@@ -1,5 +1,8 @@
 <img src="assets/IIA.svg" width=200 align="right">
 
+[![PlatformIO](https://github.com/domino4com/IIA/actions/workflows/platformio.yml/badge.svg)](https://github.com/domino4com/IIA/actions/workflows/platformio.yml)
+[![Arduino](https://github.com/domino4com/IIA/actions/workflows/arduino.yml/badge.svg)](https://github.com/domino4com/IIA/actions/workflows/arduino.yml)
+
 # IIA - Input IMU Accelerometer
 This is a part of an Inertial measurement unit measuring Acceleration in X, Y and Z axis.
 
