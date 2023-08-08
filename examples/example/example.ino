@@ -10,7 +10,7 @@
 // Specifics
 #include <IIA.h>
 IIA input;
-float x, y, z, t;
+float x, y, z;
 char s[] = "X: %.2f g, Y: %.2f g, Z: %.2f g\n";
 
 
