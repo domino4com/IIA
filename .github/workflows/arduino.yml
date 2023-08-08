@@ -20,8 +20,12 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@main
- 
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+          ref: main
+          clean: true
+
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
 
