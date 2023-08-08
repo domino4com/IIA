@@ -5,6 +5,7 @@ on:
     paths:
       - examples/**
       - src/**
+      - .github/workflows/arduino.yml
   pull_request:
   release:
     types:
@@ -22,9 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          fetch-depth: 1
-          ref: main
-          clean: true
+          ref: HEAD
 
       - name: Setup Arduino CLI
         uses: arduino/setup-arduino-cli@v1.1.1
