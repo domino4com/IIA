@@ -52,12 +52,12 @@ bool IIA::getJSON(JsonObject &doc) {
     dataSet["value"] = x;
     dataSet["unit"] = "g";
 
-    dataArray.add(dataSet);  // Subsequent data sets
+    dataSet = dataArray.createNestedObject();   // Subsequent data sets
     dataSet["name"] = "Y";
     dataSet["value"] = y;
     dataSet["unit"] = "g";
 
-    dataArray.add(dataSet);  // Subsequent data sets
+    dataSet = dataArray.createNestedObject();   // Subsequent data sets
     dataSet["name"] = "Z";
     dataSet["value"] = z;
     dataSet["unit"] = "g";
