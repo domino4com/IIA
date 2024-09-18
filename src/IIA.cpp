@@ -39,25 +39,25 @@ bool IIA::getData(float &x, float &y, float &z) {
     return true;  // Return true for successful read (add error handling if needed)
 }
 
-bool IIA::getJSON(JsonObject &doc) {
+bool IIA::getJSON(JsonDocument &doc) {
     float x, y, z;
     if (!getData(x, y, z)) {
         return false;
     }
 
-    JsonArray dataArray = doc.createNestedArray("IIA");
+    JsonArray dataArray = doc["IIA"].to<JsonArray>();
 
-    JsonObject dataSet = dataArray.createNestedObject();  // First data set
+    JsonObject dataSet = dataArray.add<JsonObject>();  // First data set
     dataSet["name"] = "X";
     dataSet["value"] = x;
     dataSet["unit"] = "g";
 
-    dataSet = dataArray.createNestedObject();   // Subsequent data sets
+    dataSet = dataArray.add<JsonObject>();  // Subsequent data sets
     dataSet["name"] = "Y";
     dataSet["value"] = y;
     dataSet["unit"] = "g";
 
-    dataSet = dataArray.createNestedObject();   // Subsequent data sets
+    dataSet = dataArray.add<JsonObject>();  // Subsequent data sets
     dataSet["name"] = "Z";
     dataSet["value"] = z;
     dataSet["unit"] = "g";
@@ -96,7 +96,7 @@ bool IIA::begin(uint8_t range, float sampleRate) {
             return beginLIS2DH12(range, LIS2DH12_ADDR);
             break;
         case 2:
-            if(beginKXTJ3(range, sampleRate, KXTJ3_ADDR)==IMU_SUCCESS) return true;
+            if (beginKXTJ3(range, sampleRate, KXTJ3_ADDR) == IMU_SUCCESS) return true;
             return false;
             break;
         default:

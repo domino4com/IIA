@@ -49,7 +49,7 @@ class IIA {
     // LIS2DH12
     IIA();
     bool getData(float &x, float &y, float &z);
-    bool getJSON(JsonObject &doc);
+    bool getJSON(JsonDocument &doc);
 
     bool begin(uint8_t range = RANGE_2G, float sampleRate = 6.25);  // Begin comm with accel at given I2C address, and given wire port
     bool isConnected();                                                                                                            // Returns true if an accel sensor is detected at library's I2C address
