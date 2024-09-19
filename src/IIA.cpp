@@ -62,6 +62,11 @@ bool IIA::getJSON(JsonDocument &doc) {
     dataSet["value"] = z;
     dataSet["unit"] = "g";
 
+    dataSet = dataArray.add<JsonObject>();  // Subsequent data sets
+    dataSet["name"] = "Magnitude";
+    dataSet["value"] = sqrt(x * x + y * y + z * z);
+    dataSet["unit"] = "g";
+
     return true;
 }
 
