@@ -15,7 +15,7 @@ enum IIA_RANGE {
 };
 
 // Print variable name
-#define getName(var) #var
+#define _getName(var) #var
 
 // Return values
 typedef enum {
